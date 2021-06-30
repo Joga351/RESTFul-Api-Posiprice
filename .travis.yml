@@ -1,0 +1,13 @@
+languaje: csharp
+mono: none
+dotnet: 3.1
+solution: PosiPrice.API.sln
+
+install: 
+  - dolnet restore
+  
+script:
+  - dotnet publish --configuration Release --runtime win-x64 /p:PublishSingleFile=true --output win-64
+  - dotnet publish --configuration Release --runtime win-x86 /p:PublishSingleFile=true --output win-86
+  - dotnet publish --configuration Release --runtime linix-x64 /p:PublishSingleFile=true --output linux-64
+  - dotnet publish --configuration Release --runtime osx-x64 /p:PublishSingleFile=true --output onx-64
